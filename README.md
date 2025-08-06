@@ -1,3 +1,12 @@
+
+RUN SERVER
+
+ npx live-server
+
+ 
+
+
+
 # Hover Animations for Terminal-like Typography
 
 Some hover animations for a terminal-like look based on the effects seen on [https://www.jeandawson.com/](https://www.jeandawson.com/)

@@ -179,11 +179,90 @@ body::after {
   caret-color: var(--color-text);
 }
 
+/* Select dropdown specific styling */
+select.form-input {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c7c0b3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+  transition: all 0.15s ease;
+}
+
+select.form-input:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+select.form-input:focus {
+  outline: none;
+  border-color: var(--color-text);
+  color: var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-text);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  z-index: 10;
+  position: relative;
+}
+
+select.form-input option {
+  background: var(--color-bg);
+  color: var(--color-list-item);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0.75rem;
+  border: none;
+  line-height: 1.4;
+}
+
+/* Style the disabled option (placeholder) */
+select.form-input option:disabled {
+  color: var(--color-list-item);
+  opacity: 0.9;
+}
+
 /* Demo-2 specific textarea styling */
 .demo-2 .form-textarea,
 .demo-2 .form-input {
   color: #ffffff;
   border-color: #c7c0b3;
+}
+
+/* Demo-2 specific select styling */
+.demo-2 select.form-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  color: #ffffff;
+}
+
+.demo-2 select.form-input:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.demo-2 select.form-input:focus {
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #ffffff;
+  z-index: 10;
+  position: relative;
+}
+
+.demo-2 select.form-input option {
+  background: #252a33;
+  color: #ffffff;
+}
+
+.demo-2 select.form-input option:disabled {
+  color: #ffffff;
+  opacity: 0.8;
 }
 
 .form-textarea {
@@ -776,7 +855,7 @@ a:focus-visible {
 	}
 	
 	.demo-2 .list__item {
-		grid-template-columns: 60px 2fr 120px 100px 50px;
+		grid-template-columns: 60px 2fr 120px 160px 50px;
 		grid-column-gap: 1rem;
 	}
 }
@@ -803,7 +882,7 @@ a:focus-visible {
 		grid-template-columns: 100px 1fr 1fr auto ;
 	}
 	.demo-2 .list__item {
-		grid-template-columns: 80px 2.5fr 140px 120px 60px;
+		grid-template-columns: 80px 2.5fr 140px 170px 60px;
 		grid-column-gap: 1.5rem;
 	}
 	.list__item-col:last-child {
