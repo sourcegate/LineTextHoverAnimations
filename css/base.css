@@ -179,6 +179,13 @@ body::after {
   caret-color: var(--color-text);
 }
 
+/* Demo-2 specific textarea styling */
+.demo-2 .form-textarea,
+.demo-2 .form-input {
+  color: #ffffff;
+  border-color: #c7c0b3;
+}
+
 .form-textarea {
   min-height: 100px;
   line-height: 1.3;
@@ -187,7 +194,7 @@ body::after {
 .form-textarea::placeholder,
 .form-input::placeholder {
   color: var(--color-list-item);
-  opacity: 0.7;
+  opacity: 0.9;
   text-transform: uppercase;
   font-family: "JetBrains Mono", monospace;
   font-weight: 300;
@@ -195,15 +202,63 @@ body::after {
 
 .form-textarea:focus::placeholder,
 .form-input:focus::placeholder {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
-/* Ensure placeholder is visible */
-#wish-text::placeholder {
-  color: var(--color-list-item) !important;
-  opacity: 0.8 !important;
+/* Enhanced placeholder visibility for demo-2 */
+.demo-2 .form-textarea::placeholder,
+.demo-2 .form-input::placeholder {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.demo-2 .form-textarea:focus::placeholder,
+.demo-2 .form-input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Ensure placeholder is visible - Enhanced specificity */
+.demo-2 #wish-text::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
   font-family: "JetBrains Mono", monospace !important;
   text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  font-weight: 300 !important;
+  visibility: visible !important;
+  display: initial !important;
+}
+
+/* Fallback for any browser issues */
+.demo-2 textarea#wish-text::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Force placeholder visibility with maximum specificity */
+body.demo-2 textarea#wish-text::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* WebKit specific placeholder styling */
+body.demo-2 textarea#wish-text::-webkit-input-placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Firefox specific placeholder styling */
+body.demo-2 textarea#wish-text::-moz-placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Edge specific placeholder styling */
+body.demo-2 textarea#wish-text::-ms-input-placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 .form-textarea:focus,

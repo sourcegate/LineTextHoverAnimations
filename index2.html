@@ -157,7 +157,6 @@
                   id="wish-text" 
                   name="wish" 
                   class="form-textarea" 
-                  placeholder="I wish I could automate..."
                   rows="4"
                   data-gramm="false"
                   data-gramm_editor="false"
@@ -172,7 +171,7 @@
                     id="category" 
                     name="category" 
                     class="form-input hover-effect hover-effect--bg" 
-                    placeholder="Category"
+                    placeholder="CATEGORY"
                     data-gramm="false"
                     data-gramm_editor="false"
                     data-enable-grammarly="false"
@@ -184,7 +183,7 @@
                     id="frequency" 
                     name="frequency" 
                     class="form-input hover-effect hover-effect--bg" 
-                    placeholder="Frequency"
+                    placeholder="FREQUENCY"
                     data-gramm="false"
                     data-gramm_editor="false"
                     data-enable-grammarly="false"
@@ -211,7 +210,7 @@
         </aside>
       </div>
     </main>
-    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+
     <!-- JavaScript dependencies -->
     <!-- GSAP library -->
     <script src="js/gsap.min.js"></script>
@@ -222,9 +221,9 @@
     <!-- Scripts for the effect -->
     <script type="module" src="js/effect-2/index.js"></script>
     
-    <!-- Animated placeholder script -->
+    <!-- Animated typing effect script -->
     <script>
-      const placeholders = [
+      const automationIdeas = [
         "I wish I could automate weekly status reports...",
         "I wish I could auto-schedule team meetings...",
         "I wish I could turn voice notes into tasks...",
@@ -242,14 +241,15 @@
       let isTyping = true;
       let showCursor = true;
       let cursorInterval;
+      let isUserInteracting = false;
       
       function typeWriter() {
         const textarea = document.getElementById('wish-text');
-        if (!textarea || !isTyping) {
+        if (!textarea || !isTyping || isUserInteracting) {
           return;
         }
         
-        const fullText = placeholders[currentIndex];
+        const fullText = automationIdeas[currentIndex];
         
         if (isDeleting) {
           currentText = fullText.substring(0, currentText.length - 1);
@@ -259,16 +259,18 @@
           typeSpeed = 80 + Math.random() * 40;
         }
         
-        // Add terminal cursor
-        const cursor = showCursor ? '█' : '';
-        textarea.setAttribute('placeholder', currentText + cursor);
+        // Use textarea value instead of placeholder for visibility
+        const cursor = showCursor ? '_' : '';
+        textarea.value = currentText + cursor;
+        textarea.style.color = '#ffffff';
+        textarea.style.opacity = '0.8';
         
         if (!isDeleting && currentText === fullText) {
           typeSpeed = 2500;
           isDeleting = true;
         } else if (isDeleting && currentText === '') {
           isDeleting = false;
-          currentIndex = (currentIndex + 1) % placeholders.length;
+          currentIndex = (currentIndex + 1) % automationIdeas.length;
           typeSpeed = 800;
         }
         
@@ -279,19 +281,22 @@
         cursorInterval = setInterval(() => {
           showCursor = !showCursor;
           const textarea = document.getElementById('wish-text');
-          if (textarea && isTyping && currentText === placeholders[currentIndex]) {
-            const cursor = showCursor ? '█' : '';
-            textarea.setAttribute('placeholder', currentText + cursor);
+          if (textarea && isTyping && !isUserInteracting) {
+            const cursor = showCursor ? '_' : '';
+            textarea.value = currentText + cursor;
           }
         }, 530);
       }
       
       function stopTyping() {
         isTyping = false;
+        isUserInteracting = true;
         clearInterval(cursorInterval);
         const textarea = document.getElementById('wish-text');
         if (textarea) {
-          textarea.setAttribute('placeholder', '');
+          textarea.value = '';
+          textarea.style.color = '#ffffff';
+          textarea.style.opacity = '1';
         }
       }
       
@@ -305,19 +310,94 @@
             typeWriter();
             startCursorBlink();
           }, 800);
+          
+          // Stop typing when user clicks or focuses on the textarea
+          textarea.addEventListener('focus', stopTyping);
+          textarea.addEventListener('click', stopTyping);
         }
+      });
+      
+      // Form Submission functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const wishForm = document.querySelector('.wish-form');
+        const wishesList = document.getElementById('wishes-list');
         
-        // Stop typing when user interacts with form
-        const categoryInput = document.getElementById('category');
-        const frequencyInput = document.getElementById('frequency');
-        
-        [textarea, categoryInput, frequencyInput].forEach(element => {
-          if (element) {
-            element.addEventListener('focus', stopTyping);
-            element.addEventListener('click', stopTyping);
-            element.addEventListener('input', stopTyping);
-          }
-        });
+        if (wishForm && wishesList) {
+          wishForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const wishText = document.getElementById('wish-text').value.trim();
+            const category = document.getElementById('category').value.trim();
+            const frequency = document.getElementById('frequency').value.trim();
+            
+            if (wishText && category && frequency) {
+              // Get current highest number
+              const existingItems = wishesList.querySelectorAll('.list__item-col:first-child');
+              let highestNumber = 0;
+              existingItems.forEach(item => {
+                const num = parseInt(item.textContent);
+                if (num > highestNumber) highestNumber = num;
+              });
+              const newNumber = String(highestNumber + 1).padStart(2, '0');
+              
+              // Create new wish item
+              const newWish = document.createElement('li');
+              newWish.className = 'list__item wish-item show';
+              newWish.innerHTML = `
+                <span class="list__item-col hover-effect hover-effect--bg">${newNumber}</span>
+                <span class="list__item-col hover-effect hover-effect--bg">${wishText}</span>
+                <span class="list__item-col hover-effect hover-effect--bg">${category}</span>
+                <span class="list__item-col hover-effect hover-effect--bg">${frequency}</span>
+                <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+              `;
+              
+              // Add to top of list (after first item which might be a header)
+              const firstWishItem = wishesList.querySelector('.wish-item');
+              if (firstWishItem) {
+                wishesList.insertBefore(newWish, firstWishItem);
+              } else {
+                wishesList.appendChild(newWish);
+              }
+              
+              // Clear form
+              document.getElementById('wish-text').value = '';
+              document.getElementById('category').value = '';
+              document.getElementById('frequency').value = '';
+              
+              // Don't reset animation state immediately - wait for success feedback to complete
+              
+              // Show success feedback
+              const submitBtn = wishForm.querySelector('.form-submit');
+              const originalText = submitBtn.textContent;
+              submitBtn.textContent = 'Wish Added! ✨';
+              submitBtn.style.color = '#8adcc0';
+              
+              setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.color = '';
+                
+                // Restart animation after a delay
+                setTimeout(() => {
+                  // Reset all animation state
+                  isUserInteracting = false;
+                  isTyping = true;
+                  currentIndex = 0;
+                  currentText = '';
+                  isDeleting = false;
+                  showCursor = true;
+                  
+                  // Clear any existing intervals
+                  clearInterval(cursorInterval);
+                  
+                  // Start fresh animation
+                  typeWriter();
+                  startCursorBlink();
+                }, 1000);
+              }, 2000);
+            }
+          });
+        }
       });
       
       // Load More functionality
