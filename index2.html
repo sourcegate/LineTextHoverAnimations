@@ -25,98 +25,186 @@
           <img src="img/grantbotlogo.svg" alt="GrantBot" class="logo">
         </div>
       </header>
-      <section class="content">
-        <h2 class="content__title">AI Automation Wishes</h2>
-        <ul class="list list--bg list--bg-west">
-            <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Reply "thanks!" to emails</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Work</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Daily</span>
+      <div class="main-layout">
+        <section class="content wishes-section">
+          <h2 class="content__title">AI Automation Wishes</h2>
+          <ul class="list list--bg list--bg-west" id="wishes-list">
+            <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">01</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Auto-generate weekly status reports<br/>from scattered project updates</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Operations</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Critical</span>
+              <button class="wish-like" aria-label="Like this wish">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 10v12"/>
+                  <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/>
+                </svg>
+              </button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">02</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Schedule meetings that actually<br/>work for everyone's calendar</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Scheduling</span>
               <span class="list__item-col hover-effect hover-effect--bg">High</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Post my gym selfies</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Social</span>
-              <span class="list__item-col hover-effect hover-effect--bg">3x/week</span>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">03</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Turn voice memos into<br/>actionable task lists</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Productivity</span>
+              <span class="list__item-col hover-effect hover-effect--bg">High</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">04</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Follow up on proposals<br/>without seeming pushy</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Sales</span>
               <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Turn rambling into notes</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Meetings</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Daily</span>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">05</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Categorize expenses from<br/>messy receipt photos</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Finance</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">06</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Create client onboarding<br/>sequences that feel personal</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Client Success</span>
+              <span class="list__item-col hover-effect hover-effect--bg">High</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">07</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Monitor competitor pricing<br/>and alert on changes</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Strategy</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">08</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Generate performance reviews<br/>from Slack conversations</span>
+              <span class="list__item-col hover-effect hover-effect--bg">HR</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Low</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">09</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Book travel that matches<br/>my weird preferences</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Travel</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Low</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item">
+              <span class="list__item-col hover-effect hover-effect--bg">10</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Send birthday messages to<br/>clients that don't sound robotic</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Relationships</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
+          </li>
+          <li class="list__item wish-item hidden">
+              <span class="list__item-col hover-effect hover-effect--bg">11</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Automatically backup project files<br/>before major presentations</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Risk Management</span>
               <span class="list__item-col hover-effect hover-effect--bg">Critical</span>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Delete blurry photos</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Phone</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Weekly</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Low</span>
-          </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Split dinner bills</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Friends</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Weekend</span>
+          <li class="list__item wish-item hidden">
+              <span class="list__item-col hover-effect hover-effect--bg">12</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Create social media content<br/>from our best Zoom moments</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Marketing</span>
               <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Skip leg day reminder</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Fitness</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Never</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Ignored</span>
+          <li class="list__item wish-item hidden">
+              <span class="list__item-col hover-effect hover-effect--bg">13</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Track team mood from<br/>daily standup responses</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Management</span>
+              <span class="list__item-col hover-effect hover-effect--bg">High</span>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Order the usual</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Food</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Hangry</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Urgent</span>
+          <li class="list__item wish-item hidden">
+              <span class="list__item-col hover-effect hover-effect--bg">14</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Generate invoice reminders<br/>that get actually paid</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Finance</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Critical</span>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Save memes properly</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Culture</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Hourly</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Essential</span>
-          </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Text mom back</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Family</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Overdue</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Guilty</span>
-          </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--bg">Name variables better</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Code</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Someday</span>
-              <span class="list__item-col hover-effect hover-effect--bg">Wishful</span>
+          <li class="list__item wish-item hidden">
+              <span class="list__item-col hover-effect hover-effect--bg">15</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Summarize customer feedback<br/>into actionable insights</span>
+              <span class="list__item-col hover-effect hover-effect--bg">Product</span>
+              <span class="list__item-col hover-effect hover-effect--bg">High</span>
           </li>
         </ul>
-        <h2 class="content__title spacer">Automation Categories</h2>
-        <ul class="list list--alt">
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--bg">Communication</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Productivity</span>
-            <span class="list__item-col hover-effect hover-effect--bg">C1</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Essential</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--bg">Content Creation</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Creative</span>
-            <span class="list__item-col hover-effect hover-effect--bg">C2</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Popular</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--bg">Data Organization</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Management</span>
-            <span class="list__item-col hover-effect hover-effect--bg">D1</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Growing</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--bg">Health & Wellness</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Lifestyle</span>
-            <span class="list__item-col hover-effect hover-effect--bg">H1</span>
-            <span class="list__item-col hover-effect hover-effect--bg">Trending</span>
-          </li>
-        </ul>
-      </section>
+        
+          <div class="load-more-container">
+            <button id="load-more-btn" class="load-more-btn hover-effect hover-effect--bg">
+              Load More Wishes
+            </button>
+          </div>
+        </section>
+        
+        <aside class="sidebar">
+          <div class="submission-form">
+            <h2 class="content__title">What's Your Wish?</h2>
+            <form class="wish-form">
+              <div class="form-group">
+                <textarea 
+                  id="wish-text" 
+                  name="wish" 
+                  class="form-textarea hover-effect hover-effect--bg" 
+                  placeholder=""
+                  rows="4"
+                  data-gramm="false"
+                  data-gramm_editor="false"
+                  data-enable-grammarly="false"
+                  required>
+                </textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <input 
+                    type="text" 
+                    id="category" 
+                    name="category" 
+                    class="form-input hover-effect hover-effect--bg" 
+                    placeholder="Category"
+                    data-gramm="false"
+                    data-gramm_editor="false"
+                    data-enable-grammarly="false"
+                    required>
+                </div>
+                <div class="form-group">
+                  <input 
+                    type="text" 
+                    id="frequency" 
+                    name="frequency" 
+                    class="form-input hover-effect hover-effect--bg" 
+                    placeholder="Frequency"
+                    data-gramm="false"
+                    data-gramm_editor="false"
+                    data-enable-grammarly="false"
+                    required>
+                </div>
+              </div>
+              <button type="submit" class="form-submit hover-effect hover-effect--bg">
+                Submit Wish
+              </button>
+            </form>
+          </div>
+          
+          <div class="categories-section">
+            <h3 class="content__title">Popular Categories</h3>
+            <div class="category-tags">
+              <span class="category-tag hover-effect hover-effect--bg">Operations</span>
+              <span class="category-tag hover-effect hover-effect--bg">Sales</span>
+              <span class="category-tag hover-effect hover-effect--bg">Finance</span>
+              <span class="category-tag hover-effect hover-effect--bg">HR</span>
+              <span class="category-tag hover-effect hover-effect--bg">Strategy</span>
+              <span class="category-tag hover-effect hover-effect--bg">Marketing</span>
+            </div>
+          </div>
+        </aside>
+      </div>
     </main>
     <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
     <!-- JavaScript dependencies -->
@@ -128,5 +216,140 @@
 
     <!-- Scripts for the effect -->
     <script type="module" src="js/effect-2/index.js"></script>
+    
+    <!-- Animated placeholder script -->
+    <script>
+      const placeholders = [
+        "I wish I could automate weekly status reports...",
+        "I wish I could auto-schedule team meetings...",
+        "I wish I could turn voice notes into tasks...",
+        "I wish I could follow up on proposals automatically...",
+        "I wish I could categorize expenses from receipts...",
+        "I wish I could create personal client onboarding...",
+        "I wish I could monitor competitor pricing...",
+        "I wish I could generate performance reviews..."
+      ];
+      
+      let currentIndex = 0;
+      let currentText = '';
+      let isDeleting = false;
+      let typeSpeed = 80;
+      let isTyping = true;
+      let showCursor = true;
+      let cursorInterval;
+      
+      function typeWriter() {
+        const textarea = document.getElementById('wish-text');
+        if (!textarea || !isTyping) {
+          return;
+        }
+        
+        const fullText = placeholders[currentIndex];
+        
+        if (isDeleting) {
+          currentText = fullText.substring(0, currentText.length - 1);
+          typeSpeed = 30; // Faster deletion like terminal
+        } else {
+          currentText = fullText.substring(0, currentText.length + 1);
+          typeSpeed = 80 + Math.random() * 40; // Variable typing speed like human
+        }
+        
+        // Add terminal cursor
+        const cursor = showCursor ? '█' : '';
+        textarea.placeholder = currentText + cursor;
+        
+        if (!isDeleting && currentText === fullText) {
+          typeSpeed = 2500; // Longer pause to read
+          isDeleting = true;
+        } else if (isDeleting && currentText === '') {
+          isDeleting = false;
+          currentIndex = (currentIndex + 1) % placeholders.length;
+          typeSpeed = 800; // Pause before starting new text
+        }
+        
+        setTimeout(typeWriter, typeSpeed);
+      }
+      
+      function startCursorBlink() {
+        cursorInterval = setInterval(() => {
+          showCursor = !showCursor;
+          const textarea = document.getElementById('wish-text');
+          if (textarea && isTyping && currentText === placeholders[currentIndex]) {
+            const cursor = showCursor ? '█' : '';
+            textarea.placeholder = currentText + cursor;
+          }
+        }, 530); // Terminal-like blink speed
+      }
+      
+      function stopTyping() {
+        isTyping = false;
+        clearInterval(cursorInterval);
+        const textarea = document.getElementById('wish-text');
+        if (textarea) {
+          textarea.placeholder = '';
+        }
+      }
+      
+      // Start the animation when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+          typeWriter();
+          startCursorBlink();
+        }, 1200); // Start after 1.2 seconds
+        
+        // Stop typing when user interacts with form
+        const textarea = document.getElementById('wish-text');
+        const categoryInput = document.getElementById('category');
+        const frequencyInput = document.getElementById('frequency');
+        
+        [textarea, categoryInput, frequencyInput].forEach(element => {
+          if (element) {
+            element.addEventListener('focus', stopTyping);
+            element.addEventListener('click', stopTyping);
+            element.addEventListener('input', stopTyping);
+          }
+        });
+      });
+      
+      // Load More functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const hiddenWishes = document.querySelectorAll('.wish-item.hidden');
+        
+        loadMoreBtn.addEventListener('click', function() {
+          // Show all hidden wishes
+          hiddenWishes.forEach(function(wish) {
+            wish.classList.remove('hidden');
+            wish.classList.add('show');
+          });
+          
+          // Hide the load more button
+          loadMoreBtn.classList.add('hidden');
+        });
+        
+        // Update all thumbs up buttons to use SVG icons
+        const oldButtons = document.querySelectorAll('.wish-like');
+        oldButtons.forEach(function(button) {
+          if (button.textContent.includes('👍')) {
+            button.innerHTML = `
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 10v12"/>
+                <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/>
+              </svg>
+            `;
+            button.classList.remove('hover-effect', 'hover-effect--bg');
+          }
+        });
+        
+        // Thumbs up functionality
+        const wishLikes = document.querySelectorAll('.wish-like');
+        wishLikes.forEach(function(button) {
+          button.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('liked');
+          });
+        });
+      });
+    </script>
   </body>
 </html>
