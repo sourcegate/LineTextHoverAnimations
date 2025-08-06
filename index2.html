@@ -109,30 +109,35 @@
               <span class="list__item-col hover-effect hover-effect--bg">Automatically backup project files<br/>before major presentations</span>
               <span class="list__item-col hover-effect hover-effect--bg">Risk Management</span>
               <span class="list__item-col hover-effect hover-effect--bg">Critical</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
           <li class="list__item wish-item hidden">
               <span class="list__item-col hover-effect hover-effect--bg">12</span>
               <span class="list__item-col hover-effect hover-effect--bg">Create social media content<br/>from our best Zoom moments</span>
               <span class="list__item-col hover-effect hover-effect--bg">Marketing</span>
               <span class="list__item-col hover-effect hover-effect--bg">Medium</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
           <li class="list__item wish-item hidden">
               <span class="list__item-col hover-effect hover-effect--bg">13</span>
               <span class="list__item-col hover-effect hover-effect--bg">Track team mood from<br/>daily standup responses</span>
               <span class="list__item-col hover-effect hover-effect--bg">Management</span>
               <span class="list__item-col hover-effect hover-effect--bg">High</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
           <li class="list__item wish-item hidden">
               <span class="list__item-col hover-effect hover-effect--bg">14</span>
               <span class="list__item-col hover-effect hover-effect--bg">Generate invoice reminders<br/>that get actually paid</span>
               <span class="list__item-col hover-effect hover-effect--bg">Finance</span>
               <span class="list__item-col hover-effect hover-effect--bg">Critical</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
           <li class="list__item wish-item hidden">
               <span class="list__item-col hover-effect hover-effect--bg">15</span>
               <span class="list__item-col hover-effect hover-effect--bg">Summarize customer feedback<br/>into actionable insights</span>
               <span class="list__item-col hover-effect hover-effect--bg">Product</span>
               <span class="list__item-col hover-effect hover-effect--bg">High</span>
+              <button class="wish-like hover-effect hover-effect--bg" aria-label="Like this wish">👍</button>
           </li>
         </ul>
         
@@ -151,8 +156,8 @@
                 <textarea 
                   id="wish-text" 
                   name="wish" 
-                  class="form-textarea hover-effect hover-effect--bg" 
-                  placeholder=""
+                  class="form-textarea" 
+                  placeholder="I wish I could automate..."
                   rows="4"
                   data-gramm="false"
                   data-gramm_editor="false"
@@ -248,23 +253,23 @@
         
         if (isDeleting) {
           currentText = fullText.substring(0, currentText.length - 1);
-          typeSpeed = 30; // Faster deletion like terminal
+          typeSpeed = 30;
         } else {
           currentText = fullText.substring(0, currentText.length + 1);
-          typeSpeed = 80 + Math.random() * 40; // Variable typing speed like human
+          typeSpeed = 80 + Math.random() * 40;
         }
         
         // Add terminal cursor
         const cursor = showCursor ? '█' : '';
-        textarea.placeholder = currentText + cursor;
+        textarea.setAttribute('placeholder', currentText + cursor);
         
         if (!isDeleting && currentText === fullText) {
-          typeSpeed = 2500; // Longer pause to read
+          typeSpeed = 2500;
           isDeleting = true;
         } else if (isDeleting && currentText === '') {
           isDeleting = false;
           currentIndex = (currentIndex + 1) % placeholders.length;
-          typeSpeed = 800; // Pause before starting new text
+          typeSpeed = 800;
         }
         
         setTimeout(typeWriter, typeSpeed);
@@ -276,9 +281,9 @@
           const textarea = document.getElementById('wish-text');
           if (textarea && isTyping && currentText === placeholders[currentIndex]) {
             const cursor = showCursor ? '█' : '';
-            textarea.placeholder = currentText + cursor;
+            textarea.setAttribute('placeholder', currentText + cursor);
           }
-        }, 530); // Terminal-like blink speed
+        }, 530);
       }
       
       function stopTyping() {
@@ -286,19 +291,23 @@
         clearInterval(cursorInterval);
         const textarea = document.getElementById('wish-text');
         if (textarea) {
-          textarea.placeholder = '';
+          textarea.setAttribute('placeholder', '');
         }
       }
       
       // Start the animation when page loads
       document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-          typeWriter();
-          startCursorBlink();
-        }, 1200); // Start after 1.2 seconds
+        const textarea = document.getElementById('wish-text');
+        
+        if (textarea) {
+          // Start animation after a brief delay
+          setTimeout(() => {
+            typeWriter();
+            startCursorBlink();
+          }, 800);
+        }
         
         // Stop typing when user interacts with form
-        const textarea = document.getElementById('wish-text');
         const categoryInput = document.getElementById('category');
         const frequencyInput = document.getElementById('frequency');
         
@@ -322,6 +331,16 @@
             wish.classList.remove('hidden');
             wish.classList.add('show');
           });
+          
+          // Add expanded class to change layout behavior
+          const wishesList = document.getElementById('wishes-list');
+          const wishesSection = document.querySelector('.wishes-section');
+          if (wishesList) {
+            wishesList.classList.add('expanded');
+          }
+          if (wishesSection) {
+            wishesSection.classList.add('expanded');
+          }
           
           // Hide the load more button
           loadMoreBtn.classList.add('hidden');

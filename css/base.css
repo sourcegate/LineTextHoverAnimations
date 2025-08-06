@@ -89,16 +89,19 @@ body::after {
   grid-template-columns: 1fr 350px;
   grid-gap: 3rem;
   padding: 2rem var(--page-padding);
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
   align-items: start;
   max-width: 100%;
-  overflow: hidden;
 }
 
 .wishes-section {
-  height: 100%;
+  min-height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
+}
+
+.wishes-section.expanded {
+  height: auto;
 }
 
 .wishes-section .content__title {
@@ -110,8 +113,17 @@ body::after {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 0;
+  overflow-y: auto;
+}
+
+#wishes-list.expanded {
+  justify-content: flex-start;
+  gap: 0;
+}
+
+#wishes-list:not(.expanded) {
+  justify-content: space-between;
 }
 
 .sidebar {
@@ -184,6 +196,14 @@ body::after {
 .form-textarea:focus::placeholder,
 .form-input:focus::placeholder {
   opacity: 0.4;
+}
+
+/* Ensure placeholder is visible */
+#wish-text::placeholder {
+  color: var(--color-list-item) !important;
+  opacity: 0.8 !important;
+  font-family: "JetBrains Mono", monospace !important;
+  text-transform: uppercase !important;
 }
 
 .form-textarea:focus,
