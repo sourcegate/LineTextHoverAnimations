@@ -1,0 +1,35 @@
+{
+  "name": "grantbot-wishes",
+  "version": "1.0.0",
+  "description": "GRANTBOT WISHES - AI Automation Dreams. Share your AI automation wishes and see what others dream of automating in their business and personal workflows.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/",
+    "start": "npx live-server --port=3000 --open=/",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "AI automation",
+    "business automation", 
+    "workflow automation",
+    "AI wishes",
+    "productivity",
+    "grantbot",
+    "terminal",
+    "hover animations"
+  ],
+  "author": "GrantBot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/grantbot-wishes"
+  },
+  "homepage": "https://grantbot-wishes.vercel.app",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
