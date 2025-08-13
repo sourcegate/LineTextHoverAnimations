@@ -16,7 +16,7 @@ Share your AI automation wishes and see what others dream of automating in their
 ## 🚀 Quick Start
 
 ### Local Development
-
+fix 
 ```bash
 # Run local development server
 npm run dev
