@@ -15,7 +15,7 @@ Share your AI automation wishes and see what others dream of automating in their
 
 ## 🚀 Quick Start
 
-### Local Development
+### Local Development fixing the push up
 fix 
 ```bash
 # Run local development server
