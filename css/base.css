@@ -31,6 +31,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 body::after {
@@ -92,6 +93,7 @@ body::after {
   min-height: calc(100vh - 120px);
   align-items: start;
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 .wishes-section {
@@ -734,6 +736,7 @@ a:focus-visible {
 	display: flex;
 	flex-direction: column;
 	counter-reset: item 0;
+	overflow-x: hidden;
 }
 
 .content p {
@@ -754,6 +757,7 @@ a:focus-visible {
 	justify-content: space-between;
 	align-items: start;
 	justify-items: start;
+	overflow-x: hidden;
 }
 
 .demo-4 .list__item {
@@ -795,6 +799,7 @@ a:focus-visible {
   font-kerning: none;
   position: relative;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .hover-effect--cursor-square .char {
