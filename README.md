@@ -2,7 +2,7 @@
 
 Share your AI automation wishes and see what others dream of automating in their business and personal workflows. Built with beautiful terminal-like hover animations and an interactive wish submission system.
 
-![GRANTBOT WISHES Screenshot](https://via.placeholder.com/800x400/1a1a1a/8adcc0?text=GRANTBOT+WISHES)
+![GRANTBOT WISHES Screenshot](https://grantbot-wishes-alpha.vercel.app/img/preview.png)
 
 ## ✨ Features
 
@@ -43,7 +43,7 @@ vercel --prod
 ```
 
 3. **One-click Deploy**: 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/grantbot-wishes)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/petesena/grantbot-wishes)
 
 ## 🛠️ Technology Stack
 
@@ -123,9 +123,8 @@ const automationIdeas = [
 
 ## 🙏 Credits
 
-- **Original Terminal Animations**: Based on effects from [Codrops](https://tympanus.net/codrops/)
-- **Inspiration**: Terminal aesthetics from [jeandawson.com](https://www.jeandawson.com/)
 - **Built with**: ❤️ by the GrantBot team
+- **Design**: Terminal aesthetics with cyberpunk influences
 
 
 

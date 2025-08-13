@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/grantbot-wishes"
+    "url": "https://github.com/petesena/grantbot-wishes"
   },
   "homepage": "https://grantbot-wishes.vercel.app",
   "devDependencies": {

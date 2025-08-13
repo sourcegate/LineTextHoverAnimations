@@ -137,9 +137,9 @@
    - Clean, reliable implementation without unnecessary complexity
 
 #### Cleanup:
-8. **Removed External Script** (`index2.html`):
-   - Removed `<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>`
-   - Cleaner code without external sponsor/ad scripts
+8. **Removed External Scripts** (`index2.html`):
+   - Removed external sponsor/ad scripts
+   - Cleaner code without external dependencies
 
 ---
 
